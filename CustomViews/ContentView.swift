@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab: Tabs = .home
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            switch selectedTab {
+            case .home:
+                HomeView()
+            case .category:
+                CategoryView()
+            case .cart:
+                CartView()
+            case .profile:
+                ProfileView()
+            }
+            
+            CustomTabbar(selectedTab: $selectedTab)
         }
-        .padding()
     }
 }
 
