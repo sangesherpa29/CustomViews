@@ -22,28 +22,28 @@ struct CustomTabbar: View {
             Button(action: {
                 selectedTab = .home
             }, label: {
-                TabItemView(image: "home", title: "Home")
+                TabItemView(image: "house", title: "Home")
                     .opacity(selectedTab == .home ? 1 : 0.3)
             })
             
             Button(action: {
                 selectedTab = .category
             }, label: {
-                TabItemView(image: "category", title: "Category")
+                TabItemView(image: "house", title: "Category")
                     .opacity(selectedTab == .category ? 1 : 0.3)
             })
             
             Button(action: {
                 selectedTab = .cart
             }, label: {
-                TabItemView(image: "shopping-bag", title: "Cart")
+                TabItemView(image: "house", title: "Cart")
                     .opacity(selectedTab == .cart ? 1 : 0.3)
             })
             
             Button(action: {
                 selectedTab = .profile
             }, label: {
-                TabItemView(image: "smile", title: "Profile")
+                TabItemView(image: "house", title: "Profile")
                     .opacity(selectedTab == .profile ? 1 : 0.3)
             })
             
@@ -64,7 +64,7 @@ struct TabItemView: View {
     
     var body: some View {
         VStack(spacing: 5) {
-            Image(image)
+            Image(systemName: image)
                 .resizable()
                 .frame(width: 22, height: 22)
             
